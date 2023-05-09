@@ -1,0 +1,45 @@
+
+body {
+    background-color: bisque;
+}
+
+h1 {
+    width: 100%;
+    color: black;
+}
+.text {
+    font-weight: bold;
+    width: 100%;
+    border-top: 1px solid gray;
+}
+.container {
+    display: flex;
+    width: 50%;
+    margin: auto;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    /* flex-basis: 50%; */
+    color: blue;
+}
+
+.container:hover {
+    color: black;
+}
+
+.meme-container {
+    /* display: flex;
+    flex-wrap: wrap; */
+    border-top: 1px solid gray;
+    height: 50px;
+    width: 100%;
+}
+.meme-container:hover {
+    cursor: pointer;
+}
+
+.meme-radio {
+    border-top: 1px solid gray;
+    appearance: none;
+    width: 0;
+    margin: 0;
+}
