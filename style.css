@@ -1,6 +1,9 @@
 
 body {
-    background-color: bisque;
+    display:flex;
+    justify-content: center;
+    margin: 0;
+    background-color: azure;
 }
 
 h1 {
@@ -11,12 +14,14 @@ h1 {
     font-weight: bold;
     width: 100%;
     border-top: 1px solid gray;
+    position:relative;
 }
 .container {
     display: flex;
-    width: 50%;
-    margin: auto;
     flex-wrap: wrap;
+    flex-basis: 700px;
+    padding: 0 25px 0 25px;
+    background-color: bisque;
     /* justify-content: center; */
     /* flex-basis: 50%; */
     color: blue;
@@ -28,7 +33,6 @@ h1 {
 .container *:hover {
     cursor: pointer;
 }
-
 
 .meme-container {
     /* display: flex;
@@ -54,6 +58,10 @@ h1 {
     align-items: center;
     height: 0;
     overflow: hidden;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    /* flex-basis: 350px; */
     transition: height 0.1s ease-in-out;
 }
 
@@ -69,8 +77,9 @@ img {
 }
 .text:hover .meme img,
 .meme-radio:checked + .text .meme img {
-    width: 350px;
-    height: 350px;
+    width: 100%;
+    height: auto;
+    /* object-fit: cover; */
 }
 
 .meme-radio:checked + .text {
@@ -81,6 +90,30 @@ img {
     height: 380px;
 }
 
-.text:active {
-    opacity: 5;
+.text:active,
+.meme-radio:checked + .text:active {
+    opacity: 0.5;
+    color: blue;
+}
+
+
+p::after {
+    visibility: hidden;
+    position: absolute;
+    right: 15px;
+    content: '\2719';
+}
+
+.container:hover p::after {
+    visibility: visible;
+    content: '\2719';
+}
+
+.text:hover p::after {
+    visibility: visible;
+    content: '\2716';
+}
+
+.meme-radio:checked + .text p::after {
+    content: '\2716';
 }
